@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+        xmlns:context="http://www.springframework.org/schema/context">
+
+	<context:annotation-config/>
+	
+	<!-- OR
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
+	
+    <bean id="emailClient" class="com.programming.techie.EmailClient" autowire="byType">  
+        <!-- collaborators and configuration for this bean go here -->
+       
+       <!-- Constructor Injection -->
+       <!-- <constructor-arg ref="advancedSpellChecker" /> -->
+       
+       <!-- Setter Injection -->
+       <!-- <property name="spellChecker" ref="advancedSpellChecker"></property> -->
+       
+    </bean>
+
+    <bean id="basicSpellChecker" class="com.programming.techie.BasicSpellChecker">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    
+    <bean id="advancedSpellChecker" class="com.programming.techie.AdvancedSpellChecker">
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
